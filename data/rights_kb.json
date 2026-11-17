@@ -1,0 +1,68 @@
+[
+  {
+    "id": "unpaid-wages-mgnrega",
+    "topic": "Unpaid Wages under MGNREGA",
+    "question_variants": [
+      "I did not get paid for my NREGA work",
+      "MGNREGA wages delayed",
+      "How to claim pending wages for daily labour work?",
+      "ವೇತನ ಬಂದಿಲ್ಲ ನರೇಗಾ",
+      "नरेगा की मजदूरी नहीं मिली"
+    ],
+    "answer_en": "Under Section 3(3) of MGNREGA, workers are entitled to receive wage payment within 15 days of work completion. If payment is delayed beyond 15 days, you are entitled to delay compensation of 0.05% of unpaid wages per day of delay until full payment is made.",
+    "steps": [
+      "Obtain your Muster Roll number and Job Card number from the Gram Panchayat.",
+      "File a grievance with the Gram Panchayat Secretary or Programme Officer (Taluk Panchayat).",
+      "Call the state MGNREGA toll-free helpline or register complaint on nrega.nic.in grievance portal.",
+      "If unresolved within 7 days, appeal to the District Ombudsman."
+    ],
+    "helpline_or_authority": "Karnataka MGNREGA Helpline: 1800-425-8666 / District Ombudsman",
+    "source_name": "Mahatma Gandhi National Rural Employment Guarantee Act, 2005",
+    "source_url": "https://nrega.nic.in",
+    "last_verified": "2026-11-01"
+  },
+  {
+    "id": "right-to-information-karnataka",
+    "topic": "Right to Information (RTI)",
+    "question_variants": [
+      "How do I file an RTI application in Karnataka?",
+      "How to know why my ration card or pension application was rejected?",
+      "RTI fees and timeline",
+      "ಮಾಹಿತಿ ಹಕ್ಕು ಅರ್ಜಿ ಹಾಕುವುದು ಹೇಗೆ",
+      "आरटीआई आवेदन कैसे करें"
+    ],
+    "answer_en": "Under the Right to Information Act 2005, every citizen has the right to inspect government records and seek information from public authorities. The Public Information Officer (PIO) must respond within 30 days (or 48 hours if it concerns life or liberty). The application fee is ₹10 (waived for BPL cardholders).",
+    "steps": [
+      "Address your application in writing (or online via rtionline.karnataka.gov.in) to the Public Information Officer (PIO) of the concerned department.",
+      "State clearly the specific information required without needing to explain why you want it.",
+      "Attach application fee of ₹10 (court fee stamp, IPO, DD, or BPL card copy for fee exemption).",
+      "If no reply within 30 days, file a First Appeal to the First Appellate Authority within 30 days."
+    ],
+    "helpline_or_authority": "Karnataka Information Commission (KIC) / Helpdesk: 080-22370909",
+    "source_name": "Right to Information Act, 2005 & Karnataka RTI Rules",
+    "source_url": "https://rtionline.karnataka.gov.in",
+    "last_verified": "2026-11-01"
+  },
+  {
+    "id": "consumer-grievance-ration-pds",
+    "topic": "PDS Ration Denial or Overcharging",
+    "question_variants": [
+      "Fair price shop dealer is not giving ration",
+      "Ration dealer charging extra money or taking cut",
+      "Biometric fingerprint failure at ration shop",
+      "ರೇಷನ್ ಅಂಗಡಿ ಮಾಲೀಕ ಅಕ್ಕಿ ಕೊಡುತ್ತಿಲ್ಲ",
+      "राशन डीलर राशन नहीं दे रहा"
+    ],
+    "answer_en": "Fair price shop (FPS) dealers are legally required to distribute entitled foodgrains at government notified prices and cannot deny ration due to biometric authentication failure. Provisions exist for OTP authentication or nominee collection.",
+    "steps": [
+      "Ask for the electronic weighing slip / receipt generated from the e-PoS machine.",
+      "Lodge an immediate complaint with the Food Inspector or Tahsildar of your Taluk.",
+      "Call the Karnataka Food & Civil Supplies Toll-Free consumer helpline 1967 or 1800-425-9333.",
+      "Submit an online grievance on the Karnataka Ahara portal (ahara.kar.nic.in)."
+    ],
+    "helpline_or_authority": "Food & Civil Supplies Consumer Helpline: 1967 / 1800-425-9333",
+    "source_name": "National Food Security Act (NFSA) 2013 & Karnataka Essential Commodities Regulations",
+    "source_url": "https://ahara.kar.nic.in",
+    "last_verified": "2026-11-01"
+  }
+]

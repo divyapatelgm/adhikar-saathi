@@ -1,0 +1,359 @@
+[
+  {
+    "id": "placeholder-karnataka-farmer-grant",
+    "tier": "verified",
+    "status": "verified",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "PLACEHOLDER Karnataka Synthetic Farmer Grant",
+      "kn": "PLACEHOLDER ಕರ್ನಾಟಕ ರೈತ ಅನುದಾನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER कर्नाटक किसान अनुदान (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Agriculture",
+    "category": ["agriculture"],
+    "target_groups": ["farmer"],
+    "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic DBT support of ₹99,999 annually.",
+      "amount_text": "₹99,999"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "occupation",
+          "op": "eq",
+          "value": "farmer",
+          "text_en": "Must be a farmer",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 150000.0,
+          "text_en": "Annual household income must be less than or equal to ₹1,50,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [18, 65],
+          "text_en": "Age must be between 18 and 65 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "owns_land",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must own agricultural land",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [
+        {
+          "field": "land_acres",
+          "op": "gte",
+          "value": 10.0,
+          "text_en": "Farmers owning 10 or more acres of land are excluded",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "notes": "PLACEHOLDER notes - replace with official notification rules"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "Pahani / RTC Record of Rights",
+      "Bank Account Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Visit nearest Grama One center",
+        "Submit RTC and Aadhaar details",
+        "Receive application receipt"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-farmer"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-farmer",
+    "source_name": "PLACEHOLDER Department of Agriculture, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-01",
+    "extracted_at": null,
+    "reviewed_by": "test_admin"
+  },
+  {
+    "id": "placeholder-student-scholarship",
+    "tier": "verified",
+    "status": "verified",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "PLACEHOLDER Pre-Matric Student Scholarship",
+      "kn": "PLACEHOLDER ಮೆಟ್ರಿಕ್-ಪೂರ್ವ ವಿದ್ಯಾರ್ಥಿವೇತನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER मैट्रिक पूर्व छात्रवृत्ति (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Social Welfare",
+    "category": ["education"],
+    "target_groups": ["student", "sc_st", "bpl"],
+    "summary_en": "PLACEHOLDER record: synthetic student education grant.",
+    "benefit": {
+      "type": "scholarship",
+      "description": "PLACEHOLDER synthetic stipend of ₹12,000 per school year.",
+      "amount_text": "₹12,000"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "is_student",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must be currently enrolled as a student",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [6, 18],
+          "text_en": "Age must be between 6 and 18 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 200000.0,
+          "text_en": "Family annual income must not exceed ₹2,00,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "category",
+          "op": "in",
+          "value": ["SC", "ST", "OBC"],
+          "text_en": "Category must be SC, ST, or OBC",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [],
+      "notes": "PLACEHOLDER rule notes"
+    },
+    "documents_required": [
+      "Student School ID Card",
+      "Caste and Income Certificate",
+      "Bank Account details"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Register on State Scholarship Portal (SSP)",
+        "Enter student SATS ID and family income certificate number",
+        "School principal verifies application online"
+      ],
+      "mode": "online",
+      "portal_url": "https://example.gov.test/placeholder-ssp"
+    },
+    "deadline_text": "31 December 2026",
+    "official_url": "https://example.gov.test/placeholder-ssp",
+    "source_name": "PLACEHOLDER Social Welfare Department",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-01",
+    "extracted_at": null,
+    "reviewed_by": "test_admin"
+  },
+  {
+    "id": "placeholder-women-livelihood-stipend",
+    "tier": "verified",
+    "status": "verified",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "PLACEHOLDER Women Entrepreneur Assistance",
+      "kn": "PLACEHOLDER ಮಹಿಳಾ ಉದ್ಯಮಶೀಲತಾ ನೆರವು (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER महिला उद्यमिता सहायता (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Women and Child Development",
+    "category": ["women", "finance"],
+    "target_groups": ["woman", "bpl"],
+    "summary_en": "PLACEHOLDER record: synthetic livelihood grant for women.",
+    "benefit": {
+      "type": "subsidy",
+      "description": "PLACEHOLDER synthetic seed capital assistance of ₹25,000.",
+      "amount_text": "₹25,000"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "gender",
+          "op": "eq",
+          "value": "female",
+          "text_en": "Beneficiary must be female",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "gte",
+          "value": 18,
+          "text_en": "Age must be at least 18 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "bpl",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must possess a BPL card",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [],
+      "notes": "PLACEHOLDER notes"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "BPL Ration Card",
+      "Bank Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Apply at local Anganwadi or Taluk Women Development Corporation office"
+      ],
+      "mode": "offline",
+      "portal_url": "https://example.gov.test/placeholder-women"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-women",
+    "source_name": "PLACEHOLDER Dept of Women & Child Development",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-01",
+    "extracted_at": null,
+    "reviewed_by": "test_admin"
+  },
+  {
+    "id": "placeholder-senior-citizen-pension",
+    "tier": "verified",
+    "status": "verified",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "PLACEHOLDER Senior Citizen Welfare Pension",
+      "kn": "PLACEHOLDER ಹಿರಿಯ ನಾಗರಿಕರ ಪಿಂಚಣಿ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER वरिष्ठ नागरिक पेंशन (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Revenue Department",
+    "category": ["senior_citizen", "social_security"],
+    "target_groups": ["senior_citizen", "bpl"],
+    "summary_en": "PLACEHOLDER record: monthly pension for elderly citizens.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic monthly pension of ₹1,200.",
+      "amount_text": "₹1,200/month"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "age",
+          "op": "gte",
+          "value": 60,
+          "text_en": "Must be 60 years of age or older",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 32000.0,
+          "text_en": "Combined family annual income must not exceed ₹32,000",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [],
+      "notes": "PLACEHOLDER notes"
+    },
+    "documents_required": [
+      "Aadhaar Card with proof of age",
+      "Income Certificate from Village Accountant / Nadakacheri",
+      "Bank Account details"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Apply at Nadakacheri (Atalji Janasnehi Kendra) or online at Nadakacheri portal"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-senior"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-senior",
+    "source_name": "PLACEHOLDER Revenue Department, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-01",
+    "extracted_at": null,
+    "reviewed_by": "test_admin"
+  },
+  {
+    "id": "placeholder-central-disability-support",
+    "tier": "verified",
+    "status": "verified",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "PLACEHOLDER Central Disability Assistive Grant",
+      "kn": "PLACEHOLDER ಕೇಂದ್ರ ವಿಕಲಚೇತನರ ಸಹಾಯ ಧನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER केंद्रीय दिव्यांगजन सहायता अनुदान (परीक्षणार्थ)"
+    },
+    "level": "central",
+    "state": null,
+    "department": "PLACEHOLDER Ministry of Social Justice and Empowerment",
+    "category": ["disability"],
+    "target_groups": ["disabled"],
+    "summary_en": "PLACEHOLDER record: central government assistance grant for persons with disabilities.",
+    "benefit": {
+      "type": "subsidy",
+      "description": "PLACEHOLDER synthetic equipment aid worth ₹15,000.",
+      "amount_text": "₹15,000"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "disability",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must have benchmark disability (40% or above)",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 180000.0,
+          "text_en": "Monthly income <= ₹15,000 (Annual income <= ₹1,80,000)",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [],
+      "notes": "PLACEHOLDER notes"
+    },
+    "documents_required": [
+      "UDID (Unique Disability ID) Card",
+      "Income Certificate",
+      "Aadhaar Card"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Register on UDID Portal / ADIP camps organized by ALIMCO"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-disability"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-disability",
+    "source_name": "PLACEHOLDER Ministry of Social Justice and Empowerment",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-01",
+    "extracted_at": null,
+    "reviewed_by": "test_admin"
+  }
+]

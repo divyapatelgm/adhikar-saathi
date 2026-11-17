@@ -1,0 +1,52 @@
+Create the data layer.
+
+1. JSON Schema + Pydantic models for the following.
+
+SCHEME record:
+{
+  "id": "string-slug",
+  "tier": "verified | extracted",
+  "status": "verified | unverified | rejected",
+  "confidence": 0.0-1.0,
+  "names": {"en": "", "kn": "", "hi": ""},
+  "level": "central | state",
+  "state": "Karnataka | null",
+  "department": "",
+  "category": ["agriculture", "education", "health", "women", "senior_citizen", "labour", "housing", "finance", "disability", "other"],
+  "target_groups": ["farmer", "student", "woman", "senior_citizen", "worker", "bpl", "sc_st", "minority", "disabled"],
+  "summary_en": "",
+  "benefit": {"type": "cash | subsidy | loan | insurance | service | scholarship | other", "description": "", "amount_text": ""},
+  "eligibility": {
+    "criteria": [ELIGIBILITY_RULE],
+    "exclusions": [ELIGIBILITY_RULE],
+    "notes": ""
+  },
+  "documents_required": [],
+  "how_to_apply": {"steps": [], "mode": "online | offline | both", "portal_url": ""},
+  "deadline_text": "",
+  "official_url": "",
+  "source_name": "",
+  "source_document": "filename in /data/raw or null",
+  "last_verified": "YYYY-MM-DD or null",
+  "extracted_at": "ISO datetime or null",
+  "reviewed_by": "string or null"
+}
+
+ELIGIBILITY_RULE:
+{
+  "field": "age | annual_income | occupation | category | gender | state | owns_land | land_acres | is_student | education_level | disability | marital_status | bpl | district | other",
+  "op": "eq | ne | in | not_in | gte | lte | between | is_true | is_false",
+  "value": "scalar | list | [min, max]",
+  "text_en": "human-readable version of the rule",
+  "source_quote": "short supporting text from the document"
+}
+
+USER_PROFILE: age, gender, state, district, occupation, annual_income, category (GEN/OBC/SC/ST/other), owns_land, land_acres, is_student, education_level, disability, marital_status, bpl.
+
+RIGHTS entry: id, topic, question_variants[], answer_en, steps[], helpline_or_authority, source_name, source_url, last_verified.
+
+2. A validator that rejects records with missing official_url/source_name, impossible values (negative ages, min > max), unknown enum values, or income units that look inconsistent (flag lakh/crore confusion).
+
+3. Create 5 sample records in /data/schemes_verified.json marked "PLACEHOLDER": every figure is a fake placeholder that I will replace after checking the official source. Do not use real scheme figures from your memory.
+
+4. A loader that reads both JSON files and exposes get_scheme(), filter_schemes(), and counts per tier.

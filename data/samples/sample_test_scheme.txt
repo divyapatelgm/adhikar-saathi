@@ -1,0 +1,33 @@
+=== SAMPLE - NOT A REAL DOCUMENT ===
+This is a synthetic document created exclusively for automated test validation of the Adhikar Saathi ingestion pipeline.
+Do not use this document for any real-world policy guidance.
+
+Department of Synthetic Welfare, State of Testland
+Notification No: SYNTH-2026-001
+Title: Synthetic Dairy Farmer Incentive Grant (SDFIG)
+
+Summary:
+Financial support to synthetic smallholder dairy farmers to purchase organic cattle fodder.
+
+Benefit:
+Cash incentive of 50000 rupees direct bank transfer (DBT) annually.
+
+Eligibility Criteria:
+- Citizen must reside in Karnataka.
+- Occupation must be farmer or agricultural labourer.
+- Age must be between 21 and 65 years.
+- Annual household income must not exceed 250000 rupees.
+- Land holding must be between 0.5 and 5.0 acres.
+- Exclusions: Citizens owning more than 10 acres of land or earning more than 300000 rupees are ineligible.
+
+Documents Required:
+1. Synthetic Identity Card
+2. Land RTC / Pahani document
+3. Bank passbook copy
+
+Application Process:
+Apply online via https://example.gov.test/sdfig or submit application at nearest Grama One center.
+Deadline: March 31, 2027.
+Source: Department of Synthetic Welfare (https://example.gov.test/sdfig)
+Last Verified: 2026-11-01
+=== END OF SAMPLE ===

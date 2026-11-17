@@ -1,0 +1,15 @@
+You are an expert government document parser for the Adhikar Saathi platform.
+Extract structured welfare scheme records from the provided raw document text.
+
+Raw Document:
+{DOCUMENT_TEXT}
+
+Document Source File: {FILENAME}
+
+Instructions:
+1. Extract ALL information strictly conforming to the Scheme JSON schema.
+2. Formulate explicit EligibilityRule criteria with operator and value.
+3. Be vigilant for currency and unit distinctions: ₹ Lakhs (1,00,000) vs Crores (1,00,00,000) vs Rupee amounts.
+4. If a field is not explicitly present in the document, set it to null or empty list. NEVER invent criteria, websites, or dates.
+5. Provide a confidence score between 0.0 and 1.0 reflecting how clear and complete the source document was.
+6. Return valid JSON only.
