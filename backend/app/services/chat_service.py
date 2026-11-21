@@ -14,7 +14,7 @@ from ..pipeline.llm_client import LLMClient, get_llm_client
 
 logger = logging.getLogger(__name__)
 
-PROMPT_VERSION = "v1"
+PROMPT_VERSION = "v2"
 
 class ChatService:
     """
@@ -77,30 +77,39 @@ class ChatService:
         return Tier3LinkOutService.generate_linkout_response(query, lang)
 
     async def _generate_rights_response(self, query: str, rights: RightsEntry, lang: str) -> ChatResponse:
-        """Generates grounded explanation of legal / civic rights."""
+        """Generates grounded, empathetic explanation of legal / civic rights."""
         steps_bullet = "\n".join(f"{i+1}. {step}" for i, step in enumerate(rights.steps))
 
         if lang == "kn":
             reply_text = (
-                f"**ವಿಷಯ: {rights.topic}**\n\n"
-                f"{rights.answer_en}\n\n"
-                f"**ತೆಗೆದುಕೊಳ್ಳಬೇಕಾದ ಕ್ರಮಗಳು:**\n{steps_bullet}\n\n"
-                f"**ಸಂಪರ್ಕಿಸಬೇಕಾದ ಪ್ರಾಧಿಕಾರ / ಸಹಾಯವಾಣಿ:**\n{rights.helpline_or_authority}"
+                f"ನಮಸ್ಕಾರ! **ವಿಷಯ: {rights.topic}**\n\n"
+                f"ಕಾನೂನಿನ ಪ್ರಕಾರ ನಿಮ್ಮ ಹಕ್ಕುಗಳ ವಿವರ ಇಲ್ಲಿದೆ:\n{rights.answer_en}\n\n"
+                f"📋 **ನೀವು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾದ ಕ್ರಮಗಳು:**\n{steps_bullet}\n\n"
+                f"📞 **ಸಂಪರ್ಕಿಸಬೇಕಾದ ಪ್ರಾಧಿಕಾರ / ಸಹಾಯವಾಣಿ:**\n{rights.helpline_or_authority}\n\n"
+                f"💡 ನೆನಪಿಡಿ, ಸರ್ಕಾರಿ ನಿಯಮಗಳ ಪ್ರಕಾರ ಈ ಸೌಲಭ್ಯವನ್ನು ಪಡೆಯುವುದು ನಿಮ್ಮ ಶಾಸನಬದ್ಧ ಹಕ್ಕಾಗಿದೆ."
             )
+            clean_first = rights.answer_en.split('.')[0]
+            audio_summary = f"ನಮಸ್ಕಾರ! {rights.topic} ಕುರಿತು: {clean_first}. ಹೆಚ್ಚಿನ ಸಹಾಯಕ್ಕಾಗಿ {rights.helpline_or_authority} ಸಂಪರ್ಕಿಸಬಹುದು."
         elif lang == "hi":
             reply_text = (
-                f"**विषय: {rights.topic}**\n\n"
-                f"{rights.answer_en}\n\n"
-                f"**कार्रवाई के कदम:**\n{steps_bullet}\n\n"
-                f"**संपर्क प्राधिकरण / हेल्पलाइन:**\n{rights.helpline_or_authority}"
+                f"नमस्ते! **विषय: {rights.topic}**\n\n"
+                f"कानून के अनुसार आपके अधिकारों की स्पष्ट जानकारी:\n{rights.answer_en}\n\n"
+                f"📋 **कार्रवाई के कदम:**\n{steps_bullet}\n\n"
+                f"📞 **संपर्क प्राधिकरण / हेल्पलाइन:**\n{rights.helpline_or_authority}\n\n"
+                f"💡 ध्यान दें, सरकारी नियमों के अंतर्गत समय पर यह सेवा प्राप्त करना आपका वैधानिक अधिकार है।"
             )
+            clean_first = rights.answer_en.split('.')[0]
+            audio_summary = f"नमस्ते! {rights.topic} के संबंध में: {clean_first}. सहायता हेतु हेल्पलाइन {rights.helpline_or_authority} पर संपर्क करें।"
         else:
             reply_text = (
-                f"**Topic: {rights.topic}**\n\n"
+                f"Hello! Here is citizen guidance regarding **{rights.topic}**:\n\n"
                 f"{rights.answer_en}\n\n"
-                f"**Action Steps:**\n{steps_bullet}\n\n"
-                f"**Grievance Authority / Helpline:**\n{rights.helpline_or_authority}"
+                f"📋 **Action Steps You Can Take:**\n{steps_bullet}\n\n"
+                f"📞 **Grievance Authority / Helpline:**\n{rights.helpline_or_authority}\n\n"
+                f"💡 Note: Under Indian statutory law, receiving these entitlements in a timely manner is your legal citizen right."
             )
+            clean_first = rights.answer_en.split('.')[0]
+            audio_summary = f"Hello! Regarding {rights.topic}: {clean_first}. You can contact {rights.helpline_or_authority} for assistance."
 
         sources = [
             SourceCitation(
@@ -114,44 +123,51 @@ class ChatService:
         return ChatResponse(
             reply_text=reply_text,
             language=lang,
+            audio_summary=audio_summary,
             sources=sources,
             is_link_out=False,
             disclaimer="Information only, not legal advice. Please verify at the official office/portal."
         )
 
     async def _generate_scheme_response(self, query: str, scheme: Scheme, lang: str) -> ChatResponse:
-        """Generates simple-language scheme explanation with benefit, docs, and application steps."""
+        """Generates warm, humanized scheme explanation with benefit, docs, and application steps."""
         name = scheme.names.get(lang) or scheme.names.get("en") or scheme.id
         docs_bullet = "\n".join(f"• {doc}" for doc in scheme.documents_required)
         steps_bullet = "\n".join(f"{i+1}. {st}" for i, st in enumerate(scheme.how_to_apply.steps))
 
         if lang == "kn":
             reply_text = (
-                f"**{name}**\n\n"
-                f"**ವಿವರಣೆ:** {scheme.summary_en}\n\n"
-                f"**ಪ್ರಮುಖ ಪ್ರಯೋಜನ:** {scheme.benefit.description} ({scheme.benefit.amount_text})\n\n"
-                f"**ಅಗತ್ಯವಿರುವ ದಾಖಲೆಗಳು:**\n{docs_bullet}\n\n"
-                f"**ಅರ್ಜಿ ಸಲ್ಲಿಸುವ ವಿಧಾನ ({scheme.how_to_apply.mode}):**\n{steps_bullet}\n\n"
-                f"**ಅಂತಿಮ ದಿನಾಂಕ:** {scheme.deadline_text}"
+                f"ನಮಸ್ಕಾರ! **{name}** ಕುರಿತು ವಿವರ ಇಲ್ಲಿದೆ:\n\n"
+                f"**ವಿಷಯ ಹಾಗೂ ವಿವರ:** {scheme.summary_en}\n\n"
+                f"🎁 **ನಿಮಗೆ ಸಿಗುವ ಪ್ರಮುಖ ಪ್ರಯೋಜನ:**\n{scheme.benefit.description} ({scheme.benefit.amount_text})\n\n"
+                f"📋 **ಅಗತ್ಯವಿರುವ ದಾಖಲೆಗಳು:**\n{docs_bullet}\n\n"
+                f"🏢 **ಅರ್ಜಿ ಸಲ್ಲಿಸುವ ಕ್ರಮಗಳು ({scheme.how_to_apply.mode}):**\n{steps_bullet}\n\n"
+                f"⏳ **ಅಂತಿಮ ದಿನಾಂಕ:** {scheme.deadline_text}\n\n"
+                f"💡 **ಸಲಹೆ:** ಅರ್ಜಿ ಸಲ್ಲಿಸಲು ನಿಮ್ಮ ಹತ್ತಿರದ ಗ್ರಾಮ ಒನ್ (Grama One) ಅಥವಾ ಸೇವಾ ಸಿಂಧು ಕೇಂದ್ರಕ್ಕೆ ಭೇಟಿ ನೀಡಿ."
             )
+            audio_summary = f"ನಮಸ್ಕಾರ! {name} ಕುರಿತು ಇಲ್ಲಿದೆ ಮಾಹಿತಿ. {scheme.benefit.description}. ನೀವು ನಿಮ್ಮ ಹತ್ತಿರದ ಗ್ರಾಮ ಒನ್ ಅಥವಾ ಸೇವಾ ಸಿಂಧು ಕೇಂದ್ರದಲ್ಲಿ ಅಗತ್ಯ ದಾಖಲೆಗಳೊಂದಿಗೆ ಸುಲಭವಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಬಹುದು."
         elif lang == "hi":
             reply_text = (
-                f"**{name}**\n\n"
+                f"नमस्ते! **{name}** के बारे में आवश्यक जानकारी:\n\n"
                 f"**विवरण:** {scheme.summary_en}\n\n"
-                f"**मुख्य लाभ:** {scheme.benefit.description} ({scheme.benefit.amount_text})\n\n"
-                f"**आवश्यक दस्तावेज:**\n{docs_bullet}\n\n"
-                f"**आवेदन कैसे करें ({scheme.how_to_apply.mode}):**\n{steps_bullet}\n\n"
-                f"**अंतिम तिथि:** {scheme.deadline_text}"
+                f"🎁 **मुख्य लाभ:**\n{scheme.benefit.description} ({scheme.benefit.amount_text})\n\n"
+                f"📋 **आवश्यक दस्तावेज:**\n{docs_bullet}\n\n"
+                f"🏢 **आवेदन के कदम ({scheme.how_to_apply.mode}):**\n{steps_bullet}\n\n"
+                f"⏳ **अंतिम तिथि:** {scheme.deadline_text}\n\n"
+                f"💡 **सुझाव:** आवेदन सहायता के लिए आप अपने नजदीकी ग्राम वन या नागरिक सेवा केंद्र (CSC) पर जा सकते हैं।"
             )
+            audio_summary = f"नमस्ते! {name} के तहत {scheme.benefit.description}. आप अपने नजदीकी ग्राम वन केंद्र पर जरूरी दस्तावेजों के साथ आवेदन कर सकते हैं।"
         else:
             reply_text = (
-                f"**{name}**\n\n"
-                f"**Summary:** {scheme.summary_en}\n\n"
-                f"**Key Benefit:** {scheme.benefit.description} ({scheme.benefit.amount_text})\n\n"
-                f"**Checklist of Required Documents:**\n{docs_bullet}\n\n"
-                f"**How to Apply ({scheme.how_to_apply.mode}):**\n{steps_bullet}\n\n"
-                f"**Application Deadline:** {scheme.deadline_text}"
+                f"Hello! Here is a friendly explanation of the **{name}**:\n\n"
+                f"**Overview:** {scheme.summary_en}\n\n"
+                f"🎁 **Key Benefit for You:**\n{scheme.benefit.description} ({scheme.benefit.amount_text})\n\n"
+                f"📋 **Checklist of Required Documents:**\n{docs_bullet}\n\n"
+                f"🏢 **How to Apply ({scheme.how_to_apply.mode}):**\n{steps_bullet}\n\n"
+                f"⏳ **Application Deadline:** {scheme.deadline_text}\n\n"
+                f"💡 **Helpful Tip:** You can easily apply or get guided assistance at your nearest Grama One, Seva Sindhu, or CSC center."
             )
+            audio_summary = f"Hello! The {name} provides {scheme.benefit.description}. You can easily apply through {scheme.how_to_apply.mode} with your required documents."
 
         sources = [
             SourceCitation(
@@ -165,6 +181,7 @@ class ChatService:
         return ChatResponse(
             reply_text=reply_text,
             language=lang,
+            audio_summary=audio_summary,
             sources=sources,
             is_link_out=False,
             disclaimer="Information only, not legal advice. Please verify at the official office/portal."

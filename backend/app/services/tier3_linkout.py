@@ -59,6 +59,7 @@ class Tier3LinkOutService:
         return ChatResponse(
             reply_text=reply_text,
             language=lang,
+            audio_summary=reply_text,
             sources=sources,
             is_link_out=True,
             disclaimer="Information only, not legal advice. Please verify at the official office/portal."

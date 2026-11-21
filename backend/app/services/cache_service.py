@@ -43,9 +43,14 @@ class ResponseCacheService:
                     reply_text TEXT NOT NULL,
                     sources_json TEXT NOT NULL,
                     is_link_out INTEGER NOT NULL,
+                    audio_summary TEXT,
                     created_at TEXT NOT NULL
                 )
             """)
+            try:
+                cursor.execute("ALTER TABLE chat_cache ADD COLUMN audio_summary TEXT")
+            except sqlite3.OperationalError:
+                pass
             conn.commit()
 
     @staticmethod
@@ -60,16 +65,18 @@ class ResponseCacheService:
         with self._connection() as conn:
             cursor = conn.cursor()
             cursor.execute(
-                "SELECT reply_text, language, sources_json, is_link_out FROM chat_cache WHERE cache_key = ?",
+                "SELECT reply_text, language, sources_json, is_link_out, audio_summary FROM chat_cache WHERE cache_key = ?",
                 (key,)
             )
             row = cursor.fetchone()
             if row:
                 sources_raw = json.loads(row["sources_json"])
                 sources = [SourceCitation(**s) for s in sources_raw]
+                audio_sum = row["audio_summary"] if "audio_summary" in row.keys() else None
                 return ChatResponse(
                     reply_text=row["reply_text"],
                     language=row["language"],
+                    audio_summary=audio_sum,
                     sources=sources,
                     is_link_out=bool(row["is_link_out"]),
                     disclaimer="Information only, not legal advice. Please verify at the official office/portal."
@@ -91,14 +98,15 @@ class ResponseCacheService:
         with self._connection() as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                INSERT INTO chat_cache (cache_key, query_text, language, prompt_version, reply_text, sources_json, is_link_out, created_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO chat_cache (cache_key, query_text, language, prompt_version, reply_text, sources_json, is_link_out, audio_summary, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(cache_key) DO UPDATE SET
                     reply_text = excluded.reply_text,
                     sources_json = excluded.sources_json,
                     is_link_out = excluded.is_link_out,
+                    audio_summary = excluded.audio_summary,
                     created_at = excluded.created_at
-            """, (key, query, language, prompt_version, response.reply_text, sources_json, int(response.is_link_out), now_iso))
+            """, (key, query, language, prompt_version, response.reply_text, sources_json, int(response.is_link_out), response.audio_summary, now_iso))
             conn.commit()
 
     def clear(self) -> None:

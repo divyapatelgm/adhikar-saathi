@@ -62,10 +62,13 @@ export const ChatWindow = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, loading]);
 
-  // If transcript completes, update input
+  // Auto-send when voice recognition completes
   useEffect(() => {
     if (transcript && !isListening) {
-      setInput(transcript);
+      const spokenText = transcript.trim();
+      if (spokenText) {
+        handleSendMessage(spokenText);
+      }
     }
   }, [transcript, isListening]);
 
@@ -90,13 +93,14 @@ export const ChatWindow = () => {
         id: (Date.now() + 1).toString(),
         sender: 'assistant',
         text: res.reply_text,
+        audio_summary: res.audio_summary,
         sources: res.sources || [],
         is_link_out: res.is_link_out,
       };
       setMessages((prev) => [...prev, assistantMsg]);
 
-      // Automatically speak the first sentence for high-accessibility voice mode
-      speak(res.reply_text, language);
+      // Speak warm humanized summary for accessible voice mode
+      speak(res.audio_summary || res.reply_text, language);
     } catch (err) {
       console.error('Chat error:', err);
       const errorMsg = {
@@ -205,7 +209,7 @@ export const ChatWindow = () => {
                     {language === 'kn' ? 'ಅಧಿಕಾರ ಸಾಥಿ' : language === 'hi' ? 'अधिकार साथी' : 'Adhikar Saathi'}
                   </span>
                   <button
-                    onClick={() => speak(msg.text, language)}
+                    onClick={() => speak(msg.audio_summary || msg.text, language)}
                     className="p-1 rounded-md hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
                     title="Read aloud in regional voice"
                   >

@@ -30,6 +30,7 @@ class SourceCitation(BaseModel):
 class ChatResponse(BaseModel):
     reply_text: str
     language: str
+    audio_summary: Optional[str] = None
     sources: List[SourceCitation] = Field(default_factory=list)
     is_link_out: bool = False
     disclaimer: str = "Information only, not legal advice. Please verify at the official office/portal."
