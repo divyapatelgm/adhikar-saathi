@@ -7,19 +7,21 @@
       "MGNREGA wages delayed",
       "How to claim pending wages for daily labour work?",
       "ವೇತನ ಬಂದಿಲ್ಲ ನರೇಗಾ",
-      "नरेगा की मजदूरी नहीं मिली"
+      "ನರೇಗಾ ಕೂಲಿ ಹಣ ಯಾವಾಗ ಬರುತ್ತದೆ",
+      "नरेगा की मजदूरी नहीं मिली",
+      "मनरेगा मजदूरी में देरी"
     ],
-    "answer_en": "Under Section 3(3) of MGNREGA, workers are entitled to receive wage payment within 15 days of work completion. If payment is delayed beyond 15 days, you are entitled to delay compensation of 0.05% of unpaid wages per day of delay until full payment is made.",
+    "answer_en": "Under Section 3(3) of MGNREGA 2005, workers are legally entitled to wage payment within 15 days of work completion. If payment is delayed beyond 15 days, you are entitled to mandatory delay compensation of 0.05% of unpaid wages per day until full disbursement.",
     "steps": [
-      "Obtain your Muster Roll number and Job Card number from the Gram Panchayat.",
-      "File a grievance with the Gram Panchayat Secretary or Programme Officer (Taluk Panchayat).",
-      "Call the state MGNREGA toll-free helpline or register complaint on nrega.nic.in grievance portal.",
-      "If unresolved within 7 days, appeal to the District Ombudsman."
+      "Check your Muster Roll number and Job Card on nrega.nic.in or at the Gram Panchayat.",
+      "Lodge a formal grievance with the Gram Panchayat Secretary or Programme Officer.",
+      "Call the Karnataka State MGNREGA toll-free helpline at 1800-425-8666.",
+      "If unresolved within 7 days, file an appeal before the District Ombudsman."
     ],
     "helpline_or_authority": "Karnataka MGNREGA Helpline: 1800-425-8666 / District Ombudsman",
-    "source_name": "Mahatma Gandhi National Rural Employment Guarantee Act, 2005",
-    "source_url": "https://nrega.nic.in",
-    "last_verified": "2026-11-01"
+    "source_name": "The Mahatma Gandhi National Rural Employment Guarantee Act, 2005 (Act No. 42 of 2005), India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2042",
+    "last_verified": "2026-11-20"
   },
   {
     "id": "right-to-information-karnataka",
@@ -29,31 +31,35 @@
       "How to know why my ration card or pension application was rejected?",
       "RTI fees and timeline",
       "ಮಾಹಿತಿ ಹಕ್ಕು ಅರ್ಜಿ ಹಾಕುವುದು ಹೇಗೆ",
-      "आरटीआई आवेदन कैसे करें"
+      "ಆರ್‌ಟಿಐ ಅರ್ಜಿ ಶುಲ್ಕ ಎಷ್ಟು",
+      "आरटीआई आवेदन कैसे करें",
+      "सूचना का अधिकार कानून"
     ],
-    "answer_en": "Under the Right to Information Act 2005, every citizen has the right to inspect government records and seek information from public authorities. The Public Information Officer (PIO) must respond within 30 days (or 48 hours if it concerns life or liberty). The application fee is ₹10 (waived for BPL cardholders).",
+    "answer_en": "Under Section 6 of the Right to Information Act 2005, any citizen can request official government records and inspection of public works. The Public Information Officer (PIO) must reply within 30 days (or 48 hours for life/liberty issues). Application fee is ₹10 (waived for BPL cardholders).",
     "steps": [
-      "Address your application in writing (or online via rtionline.karnataka.gov.in) to the Public Information Officer (PIO) of the concerned department.",
-      "State clearly the specific information required without needing to explain why you want it.",
-      "Attach application fee of ₹10 (court fee stamp, IPO, DD, or BPL card copy for fee exemption).",
-      "If no reply within 30 days, file a First Appeal to the First Appellate Authority within 30 days."
+      "Submit application online via rtionline.karnataka.gov.in or in writing to the department PIO.",
+      "Describe the requested records precisely without needing to provide any personal reason.",
+      "Pay the ₹10 fee via court fee stamp, postal order, or attach BPL card copy for zero fee.",
+      "If no response is received in 30 days, submit a First Appeal under Section 19(1) to the First Appellate Authority."
     ],
     "helpline_or_authority": "Karnataka Information Commission (KIC) / Helpdesk: 080-22370909",
-    "source_name": "Right to Information Act, 2005 & Karnataka RTI Rules",
-    "source_url": "https://rtionline.karnataka.gov.in",
-    "last_verified": "2026-11-01"
+    "source_name": "The Right to Information Act, 2005 (Act No. 22 of 2005), India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2065",
+    "last_verified": "2026-11-20"
   },
   {
     "id": "consumer-grievance-ration-pds",
-    "topic": "PDS Ration Denial or Overcharging",
+    "topic": "PDS Ration Denial, Overcharging, or NFSA Food Security Rights",
     "question_variants": [
       "Fair price shop dealer is not giving ration",
       "Ration dealer charging extra money or taking cut",
       "Biometric fingerprint failure at ration shop",
       "ರೇಷನ್ ಅಂಗಡಿ ಮಾಲೀಕ ಅಕ್ಕಿ ಕೊಡುತ್ತಿಲ್ಲ",
-      "राशन डीलर राशन नहीं दे रहा"
+      "ಪಡಿತರ ನಿರಾಕರಣೆ ದೂರು",
+      "राशन डीलर राशन नहीं दे रहा",
+      "राशन दुकान में अंगूठा नहीं लग रहा"
     ],
-    "answer_en": "Fair price shop (FPS) dealers are legally required to distribute entitled foodgrains at government notified prices and cannot deny ration due to biometric authentication failure. Provisions exist for OTP authentication or nominee collection.",
+    "answer_en": "Fair price shop (FPS) dealers are legally required under the National Food Security Act (NFSA) 2013 to distribute entitled foodgrains at government notified prices and cannot deny ration due to biometric authentication failure. Alternative OTP authentication and nominee collection are legal entitlements.",
     "steps": [
       "Ask for the electronic weighing slip / receipt generated from the e-PoS machine.",
       "Lodge an immediate complaint with the Food Inspector or Tahsildar of your Taluk.",
@@ -63,6 +69,120 @@
     "helpline_or_authority": "Food & Civil Supplies Consumer Helpline: 1967 / 1800-425-9333",
     "source_name": "National Food Security Act (NFSA) 2013 & Karnataka Essential Commodities Regulations",
     "source_url": "https://ahara.kar.nic.in",
-    "last_verified": "2026-11-01"
+    "last_verified": "2026-11-20"
+  },
+  {
+    "id": "consumer-protection-mrp-fraud",
+    "topic": "Consumer Rights: Overcharging Above MRP and Defective Goods",
+    "question_variants": [
+      "Shopkeeper charging extra above MRP",
+      "Defective electronic product and dealer refuses replacement",
+      "Consumer court online complaint",
+      "ಎಂಆರ್‌ಪಿ ಗಿಂತ ಹೆಚ್ಚು ಹಣ ಪಡೆಯುತ್ತಿದ್ದಾರೆ",
+      "ಗ್ರಾಹಕ ವೇದಿಕೆಗೆ ದೂರು ನೀಡುವುದು ಹೇಗೆ",
+      "एमआरपी से ज्यादा कीमत वसूल रहे हैं",
+      "उपभोक्ता शिकायत कैसे दर्ज करें"
+    ],
+    "answer_en": "Under the Consumer Protection Act 2019, charging any price in excess of the Maximum Retail Price (MRP) or refusing to redress defective products constitutes an unfair trade practice. Consumers have the right to full refund, replacement, and compensation.",
+    "steps": [
+      "Demand a dated tax invoice or bill stating the item and price charged.",
+      "Call the National Consumer Helpline at 1915 or send SMS/WhatsApp to 8800001915.",
+      "File an electronic grievance online on e-Daakhil portal (edaakhil.nic.in) without hiring a lawyer.",
+      "Submit the matter before the District Consumer Disputes Redressal Commission."
+    ],
+    "helpline_or_authority": "National Consumer Helpline: 1915 / e-Daakhil Karnataka Consumer Forum",
+    "source_name": "The Consumer Protection Act, 2019 (Act No. 35 of 2019), India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/15256",
+    "last_verified": "2026-11-20"
+  },
+  {
+    "id": "senior-citizens-maintenance-act",
+    "topic": "Maintenance and Welfare of Senior Citizens & Elderly Parents",
+    "question_variants": [
+      "Children not taking care of elderly parents",
+      "Senior citizen maintenance tribunal application",
+      "Property transfer cancellation by senior citizen",
+      "ಹಿರಿಯ ನಾಗರಿಕರ ರಕ್ಷಣೆ ಕಾಯ್ದೆ",
+      "ವೃದ್ಧ ತಂದೆ ತಾಯಿಯ ಪೋಷಣೆ",
+      "वरिष्ठ नागरिक भरण-पोषण कानून",
+      "बुजुर्ग माता-पिता की देखभाल"
+    ],
+    "answer_en": "Under Section 4 of the Maintenance and Welfare of Parents and Senior Citizens Act 2007, senior citizens (aged 60+) who are unable to maintain themselves can claim monthly maintenance up to ₹10,000 from adult children or legal heirs through a fast-track tribunal presided over by the Sub-Divisional Magistrate (Assistant Commissioner).",
+    "steps": [
+      "File an application before the Maintenance Tribunal at the Sub-Divisional Assistant Commissioner office.",
+      "Proceedings are conducted without lawyers; reconciliation officers assist the elders.",
+      "The Tribunal must pass an order within 90 days directing monthly payments.",
+      "Under Section 23, if elderly parents transferred property subject to care and are neglected, the transfer can be declared null and void."
+    ],
+    "helpline_or_authority": "National Helpline for Senior Citizens: 14567 / Sub-Divisional Assistant Commissioner",
+    "source_name": "Maintenance and Welfare of Parents and Senior Citizens Act, 2007 (Act No. 56 of 2007), India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2005",
+    "last_verified": "2026-11-20"
+  },
+  {
+    "id": "domestic-violence-women-protection",
+    "topic": "Protection of Women from Domestic Violence",
+    "question_variants": [
+      "Domestic violence protection order",
+      "Women helpline number in Karnataka",
+      "Husband or in-laws beating or abusing wife",
+      "ಗೃಹ ಹಿಂಸಾಚಾರ ಮಹಿಳಾ ಸಂರಕ್ಷಣೆ",
+      "ಮಹಿಳಾ ಸಹಾಯವಾಣಿ",
+      "घरेलू हिंसा से महिलाओं का संरक्षण",
+      "महिला हेल्पलाइन नंबर"
+    ],
+    "answer_en": "Under the Protection of Women from Domestic Violence Act 2005, every woman facing physical, emotional, verbal, sexual, or economic abuse has the right to safe residence in the shared household, protection orders against the abuser, interim monetary relief, and free legal aid.",
+    "steps": [
+      "Dial 112 (Emergency) or 181 (Women Helpline) for immediate intervention and safe rescue.",
+      "Contact the Protection Officer appointed in every Taluk under the Women and Child Development Department.",
+      "Protection Officers will file a Domestic Incident Report (DIR) before the Magistrate.",
+      "Access free shelter, medical care, and free legal representation through the Legal Services Authority."
+    ],
+    "helpline_or_authority": "Karnataka Women Helpline: 181 / Emergency: 112 / District Legal Services Authority",
+    "source_name": "Protection of Women from Domestic Violence Act, 2005 (Act No. 43 of 2005), India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2021",
+    "last_verified": "2026-11-20"
+  },
+  {
+    "id": "street-vendors-protection-act",
+    "topic": "Street Vendors Rights Against Arbitrary Eviction",
+    "question_variants": [
+      "Police or municipality seizing vegetable cart or eviction",
+      "Street vending certificate rules",
+      "ಬೀದಿ ಬದಿ ವ್ಯಾಪಾರಿಗಳ ಹಕ್ಕುಗಳು",
+      "रेहड़ी-पटरी विक्रेताओं के अधिकार"
+    ],
+    "answer_en": "Under Section 3 of the Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act 2014, no street vendor who has been surveyed can be evicted or relocated until the Town Vending Committee (TVC) completes a comprehensive survey and issues a formal Vending Certificate.",
+    "steps": [
+      "Ensure you register your details during the municipal Town Vending Committee (TVC) survey.",
+      "Keep your identity card or receipt of survey application readily displayed at your stall.",
+      "If police or municipal staff attempt eviction without 30 days written notice, cite Section 3(3) of the Act.",
+      "Lodge a grievance with the Town Vending Grievance Redressal Committee headed by a retired judicial magistrate."
+    ],
+    "helpline_or_authority": "Municipal Town Vending Committee (BBMP/Local Urban Body) / PM SVANidhi Helpdesk",
+    "source_name": "Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act, 2014, India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2143",
+    "last_verified": "2026-11-20"
+  },
+  {
+    "id": "disability-rights-equal-opportunity",
+    "topic": "Rights of Persons with Disabilities & Equal Access",
+    "question_variants": [
+      "Disabled person denied government reservation or access",
+      "How to get disability certificate UDID card",
+      "ಅಂಗವಿಕಲರ ಹಕ್ಕುಗಳು",
+      "दिव्यांगजन अधिकार कानून"
+    ],
+    "answer_en": "Under the Rights of Persons with Disabilities Act 2016, individuals with 40% or more benchmark disability are entitled to 4% reservation in government employment, 5% reservation in higher education, accessible public infrastructure, and unique disability identification (UDID).",
+    "steps": [
+      "Apply for digital medical assessment on the UDID portal (swavlambancard.gov.in).",
+      "Undergo medical board evaluation at the District Government Hospital to receive the UDID Smart Card.",
+      "Present your UDID card to avail bus pass concessions, educational reservations, and assistive appliances.",
+      "If discrimination or denial occurs, appeal to the State Commissioner for Persons with Disabilities."
+    ],
+    "helpline_or_authority": "State Commissioner for Persons with Disabilities, Karnataka / UDID Helpdesk: 011-24365012",
+    "source_name": "Rights of Persons with Disabilities Act, 2016 (Act No. 49 of 2016), India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/2155",
+    "last_verified": "2026-11-20"
   }
 ]

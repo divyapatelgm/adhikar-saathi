@@ -11,6 +11,11 @@ def test_health_endpoint():
     data = response.json()
     assert data["status"] == "healthy"
 
+def test_frontend_root_serving():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "html" in response.headers.get("content-type", "")
+
 def test_stats_endpoint():
     response = client.get("/api/stats")
     assert response.status_code == 200

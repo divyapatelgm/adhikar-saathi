@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     ADMIN_PASSWORD: str = "change_this_admin_password_in_production"
 
     # App Modes
-    DEMO_MODE: bool = False
+    DEMO_MODE: bool = True
     DEBUG: bool = False
     HOST: str = "0.0.0.0"
     PORT: int = 8000
@@ -32,6 +32,8 @@ class Settings(BaseSettings):
     # Storage Paths
     BASE_DIR: Path = BASE_DIR
     DATA_DIR: Path = DATA_DIR
+    SQLITE_DB_PATH: Path = DATA_DIR / "adhikar_saathi.db"
+    DATABASE_PATH: Path = DATA_DIR / "adhikar_saathi.db"
     RAW_DIR: Path = DATA_DIR / "raw"
     REJECTED_DIR: Path = DATA_DIR / "rejected"
     SAMPLES_DIR: Path = DATA_DIR / "samples"

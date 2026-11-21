@@ -1,0 +1,10 @@
+{
+  "source_file": "D:\\Projects\\adhikar-saathi\\data\\raw\\karnataka_flagship_schemes_bulletin.txt",
+  "content_hash": "0f4e1fbbb78ebf31e3a482419504cb642c4de173d5a49d5fe33348d6c7ec2cbc",
+  "rejected_at": "2026-11-20T06:00:57.925965+00:00",
+  "reasons": [
+    "LLM extraction failure: Gemini API error 403: Request to POST /v1beta/models/gemini-2.5-flash:generateContent on generativelanguage.googleapis.com not allowed by policy\n"
+  ],
+  "raw_content_preview": "GOVERNMENT OF KARNATAKA - OFFICIAL POLICY BULLETIN 2026\nDepartment of Social Welfare & Mahiti Kanaja Public Record\n\n1. Gruha Lakshmi Scheme\nProviding ₹2,000 monthly cash assistance to women head of households across Karnataka.\nEligibility: Resident of Karnataka, female head on ration card, age 18+. Exclusions: Income tax payers.\nApply via Seva Sindhu or Grama One.\n\n2. Yuva Nidhi Scheme\nFinancial assistance of ₹3,000/mo for unemployed graduates and ₹1,500/mo for diploma holders who completed stud",
+  "raw_llm_response": null
+}

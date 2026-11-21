@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adhikar Saathi | DBControl & phpMyAdmin Console</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- ============================================================
+       Auth Overlay (Login, Register & Master Access)
+       ============================================================ -->
+  <div id="auth-overlay" class="auth-overlay" style="display: none;">
+    <div class="auth-container">
+      <div class="auth-header">
+        <h1>🛡️ DBControl Access</h1>
+        <p>Database Administration & Management Console</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" data-tab="master" onclick="switchAuthTab('master')">🔑 Master Password</button>
+        <button class="auth-tab-btn" data-tab="login" onclick="switchAuthTab('login')">👤 Admin User Login</button>
+      </div>
+
+      <div class="auth-body">
+        <!-- 1. Master Access Form (Default for DBControl) -->
+        <form id="form-master" onsubmit="handleMasterLogin(event)">
+          <div class="auth-message"></div>
+          <div class="form-group">
+            <label for="master-password-input">ADMIN_PASSWORD from .env:</label>
+            <input type="password" id="master-password-input" placeholder="Enter ADMIN_PASSWORD..." autofocus required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.75rem; margin-top: 0.5rem;">
+            Authenticate with Master Password
+          </button>
+        </form>
+
+        <!-- 2. Admin User Login Form -->
+        <form id="form-login" onsubmit="handleLogin(event)" style="display: none;">
+          <div class="auth-message"></div>
+          <div class="form-group">
+            <label for="login-contact">Contact (Phone or Email):</label>
+            <input type="text" id="login-contact" placeholder="e.g. 9876543210 or admin@domain.com" required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" placeholder="Enter password..." required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.75rem; margin-top: 0.5rem;">
+            Sign In to DBControl
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       phpMyAdmin-Style Layout
+       ============================================================ -->
+  <div class="app-container">
+    <!-- Left Sidebar Tree (Img 3 & 4) -->
+    <aside class="pma-sidebar">
+      <div class="sidebar-header">
+        <div class="title">
+          <span>🛡️</span>
+          <span>phpMyAdmin</span>
+        </div>
+        <span style="font-size: 0.75rem; color: #475569; font-weight: 600;">v5.2.0</span>
+      </div>
+
+      <div class="sidebar-search">
+        <input type="text" placeholder="Type to filter tables..." oninput="filterSidebarTables(event)">
+      </div>
+
+      <div class="db-tree">
+        <div class="db-node-title" onclick="selectDatabaseNode()">
+          <span>🗄️</span>
+          <strong>adhikar_saathi</strong>
+        </div>
+        <ul class="table-list" id="sidebar-table-list">
+          <li style="padding: 1rem; color: #64748b; font-size: 0.78rem;">Loading tables...</li>
+        </ul>
+      </div>
+
+      <!-- User Session Chip -->
+      <div class="sidebar-footer">
+        <div class="user-chip">
+          <div class="user-info">
+            <span class="user-name" id="display-user-name">Loading...</span>
+            <span class="user-contact" id="display-user-contact">...</span>
+          </div>
+          <button class="btn btn-secondary" onclick="handleLogout()" style="padding: 0.25rem 0.5rem; font-size: 0.72rem;" title="Logout">
+            🚪 Logout
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="pma-main">
+      <!-- Breadcrumb Bar (Img 4) -->
+      <header class="pma-breadcrumb-bar">
+        <div class="breadcrumbs">
+          <span>Server: <strong>127.0.0.1</strong></span>
+          <span class="sep">»</span>
+          <a onclick="selectDatabaseNode()">Database: <strong id="breadcrumb-db">adhikar_saathi</strong></a>
+          <span class="sep" id="breadcrumb-table-sep">»</span>
+          <a onclick="switchView('browse')"><span id="breadcrumb-table">Table: schemes</span></a>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-secondary" onclick="syncDatabase()" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">
+            🔄 Sync Files to DB
+          </button>
+        </div>
+      </header>
+
+      <!-- Navigation Tabs (phpMyAdmin & Curation Console) -->
+      <nav class="pma-nav-tabs">
+        <a class="pma-tab" data-view="structure" onclick="switchView('structure')">
+          <span>📁</span> Structure
+        </a>
+        <a class="pma-tab active" data-view="browse" onclick="switchView('browse')">
+          <span>🔍</span> Browse
+        </a>
+        <a class="pma-tab" data-view="sql" onclick="switchView('sql')">
+          <span>💻</span> SQL
+        </a>
+        <a class="pma-tab" data-view="insert" onclick="switchView('insert')">
+          <span>➕</span> Insert
+        </a>
+        <a class="pma-tab" data-view="review" onclick="switchView('review')">
+          <span>⚖️</span> Curation Queue
+        </a>
+        <a class="pma-tab" data-view="pipeline" onclick="switchView('pipeline')">
+          <span>🚀</span> Pipeline Ingestion
+        </a>
+      </nav>
+
+      <!-- Dynamic View Container -->
+      <section class="pma-content" id="view-container">
+        <!-- Injected dynamically by app.js: Structure view or Browse view -->
+      </section>
+    </main>
+  </div>
+
+  <!-- ============================================================
+       Generic Modal (Field-by-Field Column Editor / Inserter)
+       ============================================================ -->
+  <div id="generic-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Edit Record</h3>
+        <button class="btn btn-secondary" onclick="closeGenericModal()" style="padding: 0.3rem 0.6rem;">✕ Close</button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Field-by-field form inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

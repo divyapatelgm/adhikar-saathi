@@ -1,0 +1,290 @@
+[
+  {
+    "id": "eval_01",
+    "language": "en",
+    "category": "eligibility",
+    "query": "I am a small farmer in Karnataka owning 2 acres of dryland. Am I eligible for Raitha Siri or PM-KISAN?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["raitha-siri-placeholder", "pm-kisan-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_02",
+    "language": "en",
+    "category": "eligibility",
+    "query": "I am a 19-year-old female engineering student from an OBC family with annual income 1.5 Lakhs. What scholarships can I get?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["post-matric-scholarship-obc-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_03",
+    "language": "en",
+    "category": "eligibility",
+    "query": "I am a 65-year-old male with no pension living in Bangalore below the poverty line. Can I get Sandhya Suraksha pension?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["sandhya-suraksha-yojana-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_04",
+    "language": "en",
+    "category": "eligibility",
+    "query": "I am a 30-year-old government employee earning 12 Lakhs per year. Can I get free ration under Anna Bhagya?",
+    "expected_verdict": "Not eligible",
+    "expected_scheme_ids": ["anna-bhagya-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_05",
+    "language": "en",
+    "category": "rights",
+    "query": "The panchayat contractor has not paid my MGNREGA wages for 30 days. What can I do?",
+    "expected_topic": "unpaid_wages_mgnrega",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_06",
+    "language": "en",
+    "category": "rights",
+    "query": "How do I file an RTI application to check road construction expenditure in my taluk?",
+    "expected_topic": "right_to_information_rti",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_07",
+    "language": "en",
+    "category": "rights",
+    "query": "A shopkeeper charged me above the MRP and refused a bill. Where can I complain?",
+    "expected_topic": "consumer_complaint_mrp",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_08",
+    "language": "en",
+    "category": "notice",
+    "query": "I received a notice demanding 15,000 property tax penalty within 15 days from BBMP. What is the deadline?",
+    "expected_action": "deadline_and_payment_appeal",
+    "tier": "notice",
+    "requires_source": false
+  },
+  {
+    "id": "eval_09",
+    "language": "en",
+    "category": "linkout",
+    "query": "Can I apply for the PM Flying Car Subsidy Scheme 2026?",
+    "expected_verdict": "Unknown / Link-Out",
+    "tier": "linkout",
+    "requires_source": true,
+    "must_not_hallucinate": true
+  },
+  {
+    "id": "eval_10",
+    "language": "en",
+    "category": "linkout",
+    "query": "How to get 10 lakh cash grant under Karnataka Zero Tax Millionaire scheme?",
+    "expected_verdict": "Unknown / Link-Out",
+    "tier": "linkout",
+    "requires_source": true,
+    "must_not_hallucinate": true
+  },
+  {
+    "id": "eval_11",
+    "language": "kn",
+    "category": "eligibility",
+    "query": "ನಾನು ಕರ್ನಾಟಕದ ಸಣ್ಣ ರೈತ, ನನ್ನ ಬಳಿ 1.5 ಎಕರೆ ಒಣಭೂಮಿ ಇದೆ. ರೈತ ಸಿರಿ ಯೋಜನೆಗೆ ನಾನು ಅರ್ಹನೇ?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["raitha-siri-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_12",
+    "language": "kn",
+    "category": "eligibility",
+    "query": "ನಾನು 62 ವರ್ಷದ ವೃದ್ಧೆ, ನನಗೆ ಯಾವುದೇ ಪಿಂಚಣಿ ಇಲ್ಲ ಮತ್ತು ನಾನು ಬಿಪಿಎಲ್ ಕಾರ್ಡ್ ಹೊಂದಿದ್ದೇನೆ. ಸಂಧ್ಯಾ ಸುರಕ್ಷಾ ಸಿಗುತ್ತದೆಯೇ?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["sandhya-suraksha-yojana-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_13",
+    "language": "kn",
+    "category": "eligibility",
+    "query": "ನಾನು ಬಿಎ ಓದುತ್ತಿರುವ ವಿದ್ಯಾರ್ಥಿನಿ, ನಮ್ಮ ಕುಟುಂಬದ ಆದಾಯ 1 ಲಕ್ಷ. ನನಗೆ ವಿದ್ಯಾರ್ಥಿವೇತನ ಸಿಗುತ್ತದೆಯೇ?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["post-matric-scholarship-obc-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_14",
+    "language": "kn",
+    "category": "eligibility",
+    "query": "ನನ್ನ ಆದಾಯ ವರ್ಷಕ್ಕೆ 8 ಲಕ್ಷ ರೂಪಾಯಿ, ನನಗೆ ಅನ್ನಭಾಗ್ಯ ಯೋಜನೆಯಡಿ ಉಚಿತ ಅಕ್ಕಿ ಸಿಗುತ್ತದೆಯೇ?",
+    "expected_verdict": "Not eligible",
+    "expected_scheme_ids": ["anna-bhagya-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_15",
+    "language": "kn",
+    "category": "rights",
+    "query": "ನರೇಗಾ ಕೂಲಿ ಕೆಲಸ ಮಾಡಿ 2 ತಿಂಗಳಾದರೂ ಹಣ ಬಂದಿಲ್ಲ. ನಾನು ಎಲ್ಲಿ ದೂರು ನೀಡಬೇಕು?",
+    "expected_topic": "unpaid_wages_mgnrega",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_16",
+    "language": "kn",
+    "category": "rights",
+    "query": "ಗ್ರಾಮ ಪಂಚಾಯತಿಯಲ್ಲಿ ನಡೆದ ಕಾಮಗಾರಿಗಳ ವಿವರ ಪಡೆಯಲು ಮಾಹಿತಿ ಹಕ್ಕು (RTI) ಅರ್ಜಿ ಹೇಗೆ ಸಲ್ಲಿಸಬೇಕು?",
+    "expected_topic": "right_to_information_rti",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_17",
+    "language": "kn",
+    "category": "rights",
+    "query": "ಪಡಿತರ ಅಂಗಡಿಯವರು ಪಡಿತರ ಕೊಡಲು ನಿರಾಕರಿಸುತ್ತಿದ್ದಾರೆ, ಯಾರಿಗೆ ದೂರು ಕೊಡಬೇಕು?",
+    "expected_topic": "ration_denial_complaint",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_18",
+    "language": "kn",
+    "category": "notice",
+    "query": "ಗ್ರಾಮ ಪಂಚಾಯತಿಯಿಂದ ನೀರಿನ ಕಂದಾಯ ಬಾಕಿ ಪಾವತಿಸಲು ನೋಟಿಸ್ ಬಂದಿದೆ, ಕೊನೆಯ ದಿನಾಂಕ ಯಾವಾಗ?",
+    "expected_action": "notice_summary_deadline",
+    "tier": "notice",
+    "requires_source": false
+  },
+  {
+    "id": "eval_19",
+    "language": "kn",
+    "category": "linkout",
+    "query": "ಕರ್ನಾಟಕ ಚಂದ್ರಯಾನ ರೈತ ಉಚಿತ ಭೂಮಿ ಯೋಜನೆ 2026 ರ ವಿವರ ನೀಡಿ.",
+    "expected_verdict": "Unknown / Link-Out",
+    "tier": "linkout",
+    "requires_source": true,
+    "must_not_hallucinate": true
+  },
+  {
+    "id": "eval_20",
+    "language": "kn",
+    "category": "linkout",
+    "query": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಉಚಿತ ಮೋಟಾರ್ ಸೈಕಲ್ ಯೋಜನೆಗೆ ಅರ್ಜಿ ಹೇಗೆ ಹಾಕುವುದು?",
+    "expected_verdict": "Unknown / Link-Out",
+    "tier": "linkout",
+    "requires_source": true,
+    "must_not_hallucinate": true
+  },
+  {
+    "id": "eval_21",
+    "language": "hi",
+    "category": "eligibility",
+    "query": "मैं कर्नाटक में 1.8 एकड़ जमीन वाला छोटा किसान हूँ। क्या मुझे पीएम किसान और रैथा सिरी का लाभ मिल सकता है?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["pm-kisan-placeholder", "raitha-siri-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_22",
+    "language": "hi",
+    "category": "eligibility",
+    "query": "मैं 65 वर्ष का वृद्ध हूँ, कोई सरकारी पेंशन नहीं है और बीपीएल परिवार से हूँ। मुझे वृद्धावस्था पेंशन मिल सकती है?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["sandhya-suraksha-yojana-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_23",
+    "language": "hi",
+    "category": "eligibility",
+    "query": "मैं कॉलेज की छात्रा हूँ और परिवार की आय 1.2 लाख रुपये है। क्या पोस्ट-मैट्रिक स्कॉलरशिप मिल सकती है?",
+    "expected_verdict": "Eligible",
+    "expected_scheme_ids": ["post-matric-scholarship-obc-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_24",
+    "language": "hi",
+    "category": "eligibility",
+    "query": "मेरी वार्षिक आय 10 लाख रुपये है। क्या मैं बीपीएल अन्न भाग्य योजना के लिए पात्र हूँ?",
+    "expected_verdict": "Not eligible",
+    "expected_scheme_ids": ["anna-bhagya-placeholder"],
+    "tier": "verified",
+    "requires_source": true
+  },
+  {
+    "id": "eval_25",
+    "language": "hi",
+    "category": "rights",
+    "query": "मनरेगा में काम किए 45 दिन हो गए लेकिन मजदूरी नहीं मिली। क्या अधिकार हैं?",
+    "expected_topic": "unpaid_wages_mgnrega",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_26",
+    "language": "hi",
+    "category": "rights",
+    "query": "सरकारी स्कूल में मध्याह्न भोजन की जानकारी के लिए आरटीआई (RTI) कैसे लगाएं?",
+    "expected_topic": "right_to_information_rti",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_27",
+    "language": "hi",
+    "category": "rights",
+    "query": "दुकानदार एमआरपी से ज्यादा कीमत वसूल रहा है, उपभोक्ता शिकायत कहाँ करें?",
+    "expected_topic": "consumer_complaint_mrp",
+    "tier": "rights",
+    "requires_source": true
+  },
+  {
+    "id": "eval_28",
+    "language": "hi",
+    "category": "notice",
+    "query": "मुझे ग्राम पंचायत से संपत्ति कर भरने का नोटिस मिला है, अंतिम तारीख कैसे समझें?",
+    "expected_action": "notice_summary_deadline",
+    "tier": "notice",
+    "requires_source": false
+  },
+  {
+    "id": "eval_29",
+    "language": "hi",
+    "category": "linkout",
+    "query": "क्या 2026 में सभी नागरिकों को 5 लाख मुफ्त सोना योजना शुरू हुई है?",
+    "expected_verdict": "Unknown / Link-Out",
+    "tier": "linkout",
+    "requires_source": true,
+    "must_not_hallucinate": true
+  },
+  {
+    "id": "eval_30",
+    "language": "hi",
+    "category": "linkout",
+    "query": "पीएम मुफ्त हवाई जहाज यात्रा योजना का फॉर्म कहाँ मिलेगा?",
+    "expected_verdict": "Unknown / Link-Out",
+    "tier": "linkout",
+    "requires_source": true,
+    "must_not_hallucinate": true
+  }
+]

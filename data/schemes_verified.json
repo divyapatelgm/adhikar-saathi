@@ -13,8 +13,12 @@
     "level": "state",
     "state": "Karnataka",
     "department": "PLACEHOLDER Department of Agriculture",
-    "category": ["agriculture"],
-    "target_groups": ["farmer"],
+    "category": [
+      "agriculture"
+    ],
+    "target_groups": [
+      "farmer"
+    ],
     "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
     "benefit": {
       "type": "cash",
@@ -40,7 +44,10 @@
         {
           "field": "age",
           "op": "between",
-          "value": [18, 65],
+          "value": [
+            18,
+            65
+          ],
           "text_en": "Age must be between 18 and 65 years",
           "source_quote": "PLACEHOLDER quote"
         },
@@ -99,8 +106,14 @@
     "level": "state",
     "state": "Karnataka",
     "department": "PLACEHOLDER Department of Social Welfare",
-    "category": ["education"],
-    "target_groups": ["student", "sc_st", "bpl"],
+    "category": [
+      "education"
+    ],
+    "target_groups": [
+      "student",
+      "sc_st",
+      "bpl"
+    ],
     "summary_en": "PLACEHOLDER record: synthetic student education grant.",
     "benefit": {
       "type": "scholarship",
@@ -119,7 +132,10 @@
         {
           "field": "age",
           "op": "between",
-          "value": [6, 18],
+          "value": [
+            6,
+            18
+          ],
           "text_en": "Age must be between 6 and 18 years",
           "source_quote": "PLACEHOLDER quote"
         },
@@ -133,7 +149,11 @@
         {
           "field": "category",
           "op": "in",
-          "value": ["SC", "ST", "OBC"],
+          "value": [
+            "SC",
+            "ST",
+            "OBC"
+          ],
           "text_en": "Category must be SC, ST, or OBC",
           "source_quote": "PLACEHOLDER quote"
         }
@@ -177,8 +197,14 @@
     "level": "state",
     "state": "Karnataka",
     "department": "PLACEHOLDER Women and Child Development",
-    "category": ["women", "finance"],
-    "target_groups": ["woman", "bpl"],
+    "category": [
+      "women",
+      "finance"
+    ],
+    "target_groups": [
+      "woman",
+      "bpl"
+    ],
     "summary_en": "PLACEHOLDER record: synthetic livelihood grant for women.",
     "benefit": {
       "type": "subsidy",
@@ -246,8 +272,14 @@
     "level": "state",
     "state": "Karnataka",
     "department": "PLACEHOLDER Revenue Department",
-    "category": ["senior_citizen", "social_security"],
-    "target_groups": ["senior_citizen", "bpl"],
+    "category": [
+      "senior_citizen",
+      "social_security"
+    ],
+    "target_groups": [
+      "senior_citizen",
+      "bpl"
+    ],
     "summary_en": "PLACEHOLDER record: monthly pension for elderly citizens.",
     "benefit": {
       "type": "cash",
@@ -308,8 +340,12 @@
     "level": "central",
     "state": null,
     "department": "PLACEHOLDER Ministry of Social Justice and Empowerment",
-    "category": ["disability"],
-    "target_groups": ["disabled"],
+    "category": [
+      "disability"
+    ],
+    "target_groups": [
+      "disabled"
+    ],
     "summary_en": "PLACEHOLDER record: central government assistance grant for persons with disabilities.",
     "benefit": {
       "type": "subsidy",
@@ -355,5 +391,470 @@
     "last_verified": "2026-11-01",
     "extracted_at": null,
     "reviewed_by": "test_admin"
+  },
+  {
+    "id": "test-phase5-1795152419",
+    "tier": "verified",
+    "status": "rejected",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "Phase 5 Temp Scheme",
+      "kn": "PLACEHOLDER ಕರ್ನಾಟಕ ರೈತ ಅನುದಾನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER कर्नाटक किसान अनुदान (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Agriculture",
+    "category": [
+      "agriculture"
+    ],
+    "target_groups": [
+      "farmer"
+    ],
+    "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic DBT support of ₹99,999 annually.",
+      "amount_text": "₹99,999"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "occupation",
+          "op": "eq",
+          "value": "farmer",
+          "text_en": "Must be a farmer",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 150000.0,
+          "text_en": "Annual household income must be less than or equal to ₹1,50,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            65
+          ],
+          "text_en": "Age must be between 18 and 65 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "owns_land",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must own agricultural land",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [
+        {
+          "field": "land_acres",
+          "op": "gte",
+          "value": 10.0,
+          "text_en": "Farmers owning 10 or more acres of land are excluded",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "notes": "PLACEHOLDER notes - replace with official notification rules"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "Pahani / RTC Record of Rights",
+      "Bank Account Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Visit nearest Grama One center",
+        "Submit RTC and Aadhaar details",
+        "Receive application receipt"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-farmer"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-farmer",
+    "source_name": "PLACEHOLDER Department of Agriculture, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-20",
+    "extracted_at": null,
+    "reviewed_by": "Phase5_Reviewer"
+  },
+  {
+    "id": "test-phase5-1795154308",
+    "tier": "verified",
+    "status": "rejected",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "Phase 5 Temp Scheme",
+      "kn": "PLACEHOLDER ಕರ್ನಾಟಕ ರೈತ ಅನುದಾನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER कर्नाटक किसान अनुदान (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Agriculture",
+    "category": [
+      "agriculture"
+    ],
+    "target_groups": [
+      "farmer"
+    ],
+    "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic DBT support of ₹99,999 annually.",
+      "amount_text": "₹99,999"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "occupation",
+          "op": "eq",
+          "value": "farmer",
+          "text_en": "Must be a farmer",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 150000.0,
+          "text_en": "Annual household income must be less than or equal to ₹1,50,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            65
+          ],
+          "text_en": "Age must be between 18 and 65 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "owns_land",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must own agricultural land",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [
+        {
+          "field": "land_acres",
+          "op": "gte",
+          "value": 10.0,
+          "text_en": "Farmers owning 10 or more acres of land are excluded",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "notes": "PLACEHOLDER notes - replace with official notification rules"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "Pahani / RTC Record of Rights",
+      "Bank Account Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Visit nearest Grama One center",
+        "Submit RTC and Aadhaar details",
+        "Receive application receipt"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-farmer"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-farmer",
+    "source_name": "PLACEHOLDER Department of Agriculture, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-20",
+    "extracted_at": null,
+    "reviewed_by": "Phase5_Reviewer"
+  },
+  {
+    "id": "test-phase5-1795154380",
+    "tier": "verified",
+    "status": "rejected",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "Phase 5 Temp Scheme",
+      "kn": "PLACEHOLDER ಕರ್ನಾಟಕ ರೈತ ಅನುದಾನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER कर्नाटक किसान अनुदान (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Agriculture",
+    "category": [
+      "agriculture"
+    ],
+    "target_groups": [
+      "farmer"
+    ],
+    "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic DBT support of ₹99,999 annually.",
+      "amount_text": "₹99,999"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "occupation",
+          "op": "eq",
+          "value": "farmer",
+          "text_en": "Must be a farmer",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 150000.0,
+          "text_en": "Annual household income must be less than or equal to ₹1,50,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            65
+          ],
+          "text_en": "Age must be between 18 and 65 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "owns_land",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must own agricultural land",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [
+        {
+          "field": "land_acres",
+          "op": "gte",
+          "value": 10.0,
+          "text_en": "Farmers owning 10 or more acres of land are excluded",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "notes": "PLACEHOLDER notes - replace with official notification rules"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "Pahani / RTC Record of Rights",
+      "Bank Account Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Visit nearest Grama One center",
+        "Submit RTC and Aadhaar details",
+        "Receive application receipt"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-farmer"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-farmer",
+    "source_name": "PLACEHOLDER Department of Agriculture, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-20",
+    "extracted_at": null,
+    "reviewed_by": "Phase5_Reviewer"
+  },
+  {
+    "id": "test-phase5-1795154457",
+    "tier": "verified",
+    "status": "rejected",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "Phase 5 Temp Scheme",
+      "kn": "PLACEHOLDER ಕರ್ನಾಟಕ ರೈತ ಅನುದಾನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER कर्नाटक किसान अनुदान (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Agriculture",
+    "category": [
+      "agriculture"
+    ],
+    "target_groups": [
+      "farmer"
+    ],
+    "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic DBT support of ₹99,999 annually.",
+      "amount_text": "₹99,999"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "occupation",
+          "op": "eq",
+          "value": "farmer",
+          "text_en": "Must be a farmer",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 150000.0,
+          "text_en": "Annual household income must be less than or equal to ₹1,50,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            65
+          ],
+          "text_en": "Age must be between 18 and 65 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "owns_land",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must own agricultural land",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [
+        {
+          "field": "land_acres",
+          "op": "gte",
+          "value": 10.0,
+          "text_en": "Farmers owning 10 or more acres of land are excluded",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "notes": "PLACEHOLDER notes - replace with official notification rules"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "Pahani / RTC Record of Rights",
+      "Bank Account Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Visit nearest Grama One center",
+        "Submit RTC and Aadhaar details",
+        "Receive application receipt"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-farmer"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-farmer",
+    "source_name": "PLACEHOLDER Department of Agriculture, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-20",
+    "extracted_at": null,
+    "reviewed_by": "Phase5_Reviewer"
+  },
+  {
+    "id": "test-phase5-1795166429",
+    "tier": "verified",
+    "status": "rejected",
+    "confidence": 1.0,
+    "is_placeholder": true,
+    "names": {
+      "en": "Phase 5 Temp Scheme",
+      "kn": "PLACEHOLDER ಕರ್ನಾಟಕ ರೈತ ಅನುದಾನ (ಪರೀಕ್ಷಾರ್ಥ)",
+      "hi": "PLACEHOLDER कर्नाटक किसान अनुदान (परीक्षणार्थ)"
+    },
+    "level": "state",
+    "state": "Karnataka",
+    "department": "PLACEHOLDER Department of Agriculture",
+    "category": [
+      "agriculture"
+    ],
+    "target_groups": [
+      "farmer"
+    ],
+    "summary_en": "PLACEHOLDER record with synthetic values for system testing.",
+    "benefit": {
+      "type": "cash",
+      "description": "PLACEHOLDER synthetic DBT support of ₹99,999 annually.",
+      "amount_text": "₹99,999"
+    },
+    "eligibility": {
+      "criteria": [
+        {
+          "field": "occupation",
+          "op": "eq",
+          "value": "farmer",
+          "text_en": "Must be a farmer",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "annual_income",
+          "op": "lte",
+          "value": 150000.0,
+          "text_en": "Annual household income must be less than or equal to ₹1,50,000",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            65
+          ],
+          "text_en": "Age must be between 18 and 65 years",
+          "source_quote": "PLACEHOLDER quote"
+        },
+        {
+          "field": "owns_land",
+          "op": "is_true",
+          "value": true,
+          "text_en": "Must own agricultural land",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "exclusions": [
+        {
+          "field": "land_acres",
+          "op": "gte",
+          "value": 10.0,
+          "text_en": "Farmers owning 10 or more acres of land are excluded",
+          "source_quote": "PLACEHOLDER quote"
+        }
+      ],
+      "notes": "PLACEHOLDER notes - replace with official notification rules"
+    },
+    "documents_required": [
+      "Aadhaar Card",
+      "Pahani / RTC Record of Rights",
+      "Bank Account Passbook"
+    ],
+    "how_to_apply": {
+      "steps": [
+        "Visit nearest Grama One center",
+        "Submit RTC and Aadhaar details",
+        "Receive application receipt"
+      ],
+      "mode": "both",
+      "portal_url": "https://example.gov.test/placeholder-farmer"
+    },
+    "deadline_text": "Ongoing",
+    "official_url": "https://example.gov.test/placeholder-farmer",
+    "source_name": "PLACEHOLDER Department of Agriculture, Govt of Karnataka",
+    "source_document": "sample_test_scheme.txt",
+    "last_verified": "2026-11-20",
+    "extracted_at": null,
+    "reviewed_by": "Phase5_Reviewer"
   }
 ]

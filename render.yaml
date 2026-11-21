@@ -1,0 +1,32 @@
+services:
+  # Backend FastAPI API Service
+  - type: web
+    name: adhikar-saathi-api
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GNANI_API_KEY
+        sync: false
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: DEMO_MODE
+        value: "false"
+      - key: CORS_ORIGINS
+        value: "https://adhikar-saathi.vercel.app,http://localhost:5173"
+    healthCheckPath: /api/health
+
+  # Frontend React Static Site (if hosting on Render instead of Vercel)
+  - type: web
+    name: adhikar-saathi-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

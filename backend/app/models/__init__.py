@@ -17,6 +17,7 @@ from .scheme import (
     HowToApply,
 )
 from .rights import RightsEntry
+from .notice import NoticeScanResult, UrgencyLevel
 from .verdict import (
     EligibilityEvaluation,
     NextQuestionResponse,
@@ -48,6 +49,8 @@ __all__ = [
     "EligibilityContainer",
     "HowToApply",
     "RightsEntry",
+    "NoticeScanResult",
+    "UrgencyLevel",
     "EligibilityEvaluation",
     "NextQuestionResponse",
     "QuestionOption",

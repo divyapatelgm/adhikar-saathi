@@ -1,5 +1,6 @@
 from typing import Optional, List
 from fastapi import FastAPI, Depends, HTTPException, Security, status, Header
+from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
 
@@ -14,6 +15,11 @@ from .models.api import (
 )
 from .models.scheme import Scheme
 from .models.enums import TierType
+from .routes.admin import router as admin_router, auth_router, citizen_auth_router
+from .routes.chat import router as chat_router
+from .routes.notice import router as notice_router
+from .routes.speech import router as speech_router
+from .auth import validate_session_token
 
 app = FastAPI(
     title="Adhikar Saathi API",
@@ -31,16 +37,33 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Admin Security Dependency
-admin_key_header = APIKeyHeader(name="X-Admin-Password", auto_error=False)
+# Admin Security Dependency (Supports both master password and registered user session tokens)
+def verify_admin_access(
+    x_admin_password: Optional[str] = Header(None, alias="X-Admin-Password"),
+    x_admin_token: Optional[str] = Header(None, alias="X-Admin-Token"),
+    authorization: Optional[str] = Header(None, alias="Authorization"),
+):
+    # 1. Master Admin Password check
+    if x_admin_password and x_admin_password == settings.ADMIN_PASSWORD:
+        return True
 
-def verify_admin_access(x_admin_password: Optional[str] = Security(admin_key_header)):
-    if not x_admin_password or x_admin_password != settings.ADMIN_PASSWORD:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid or missing admin credentials."
-        )
-    return True
+    # 2. Check X-Admin-Token
+    if x_admin_token:
+        user_info = validate_session_token(x_admin_token)
+        if user_info:
+            return True
+
+    # 3. Check Bearer Authorization Header
+    if authorization and authorization.lower().startswith("bearer "):
+        token = authorization[7:].strip()
+        user_info = validate_session_token(token)
+        if user_info:
+            return True
+
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Invalid or missing admin credentials. Please login or register."
+    )
 
 @app.get("/api/health")
 def health_check():
@@ -99,3 +122,36 @@ def evaluate_eligibility(payload: EligibilityRequest):
 @app.get("/api/admin/verify-auth")
 def check_admin_auth(authorized: bool = Depends(verify_admin_access)):
     return {"authenticated": True, "message": "Admin credentials valid."}
+
+# Public Auth Endpoints (Register & Login)
+app.include_router(auth_router)
+app.include_router(citizen_auth_router)
+
+# Protected Admin Endpoints
+app.include_router(admin_router, dependencies=[Depends(verify_admin_access)])
+
+# Conversational Chat Endpoints
+app.include_router(chat_router)
+
+# Government Notice Scanner Endpoints
+app.include_router(notice_router)
+
+# Speech & Voice Endpoints
+app.include_router(speech_router)
+
+# Serve static DBControl dashboard at /admin
+db_control_dir = settings.BASE_DIR / "DBControl"
+if db_control_dir.exists():
+    from fastapi.staticfiles import StaticFiles
+
+    @app.get("/admin", include_in_schema=False)
+    def redirect_admin_trailing_slash():
+        return RedirectResponse(url="/admin/")
+
+    app.mount("/admin", StaticFiles(directory=str(db_control_dir), html=True), name="dbcontrol")
+
+# Serve static frontend build if present
+frontend_dist = settings.BASE_DIR / "frontend" / "dist"
+if frontend_dist.exists():
+    from fastapi.staticfiles import StaticFiles
+    app.mount("/", StaticFiles(directory=str(frontend_dist), html=True), name="frontend")

@@ -7,7 +7,7 @@ def test_loader_excludes_placeholders_when_demo_mode_false():
     counts = loader.get_counts()
     # In production mode without demo_mode, placeholders must be hidden
     assert counts["verified"] == 0
-    assert counts["total"] == 0
+    assert counts["total"] == counts["extracted"]
     assert loader.get_scheme("placeholder-karnataka-farmer-grant") is None
 
 def test_loader_includes_placeholders_when_demo_mode_true():

@@ -1,0 +1,10 @@
+{
+  "source_file": "D:\\Projects\\adhikar-saathi\\data\\samples\\sample_test_scheme.pdf",
+  "content_hash": "0b2cac7bf504900c55b2f02b235c94d537b91c82f94cbde0b194c8cd02fc1e03",
+  "rejected_at": "2026-11-17T05:39:44.179887+00:00",
+  "reasons": [
+    "LLM extraction failure: Gemini API error 403: Request to POST /v1beta/models/gemini-2.5-flash:generateContent on generativelanguage.googleapis.com not allowed by policy\n"
+  ],
+  "raw_content_preview": "=== SAMPLE - NOT A REAL DOCUMENT ===\nDepartment of Synthetic Welfare, State of Testland\nTitle: Synthetic Dairy Farmer Incentive Grant (SDFIG)\nBenefit: Cash incentive of 50000 rupees annually via DBT.\nEligibility: Citizen must reside in Karnataka, age 21 to 65.\nOccupation: farmer or agricultural labourer.\nIncome: not exceed 250000 rupees. Land: 0.5 to 5.0 acres.\nExclusions: Owning more than 10 acres of land is excluded.\nApply: https://example.gov.test/sdfig\nSource: Department of Synthetic Welfare",
+  "raw_llm_response": null
+}

@@ -1,0 +1,10 @@
+{
+  "source_file": "D:\\Projects\\adhikar-saathi\\data\\samples\\sample_test_scheme.txt",
+  "content_hash": "3d0bca349d21e344654c9f3a12bc8e469ffc12f6db0530a66be16e00c2fe6e01",
+  "rejected_at": "2026-11-17T05:16:24.397133+00:00",
+  "reasons": [
+    "LLM extraction failure: Gemini API error 403: Request to POST /v1beta/models/gemini-2.5-flash:generateContent on generativelanguage.googleapis.com not allowed by policy\n"
+  ],
+  "raw_content_preview": "=== SAMPLE - NOT A REAL DOCUMENT ===\nThis is a synthetic document created exclusively for automated test validation of the Adhikar Saathi ingestion pipeline.\nDo not use this document for any real-world policy guidance.\n\nDepartment of Synthetic Welfare, State of Testland\nNotification No: SYNTH-2026-001\nTitle: Synthetic Dairy Farmer Incentive Grant (SDFIG)\n\nSummary:\nFinancial support to synthetic smallholder dairy farmers to purchase organic cattle fodder.\n\nBenefit:\nCash incentive of 50000 rupees ",
+  "raw_llm_response": null
+}
