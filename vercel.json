@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://adhikar-saathi-api.onrender.com/api/$1"
+      "destination": "https://adhikar-saathi.onrender.com/api/$1"
     },
     {
       "source": "/(.*)",
